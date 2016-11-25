@@ -1,18 +1,11 @@
 import Vue from 'vue'
-/*
-*  Import your components here.
-*  Your components directory is aliased as 'components'
-*  e.g.
-*
-import MyComponent from 'components/my-component'
-*/
+import greeting from 'components/greeting'
 
 export default function (template) {
   return new Vue({
     template,
-    // Then include them here:
     components: {
-      // MyComponent
+      greeting
     }
   })
 }

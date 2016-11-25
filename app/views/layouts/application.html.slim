@@ -3,5 +3,7 @@ html
   head
     title VueportExample
     = csrf_meta_tags
+    = stylesheet_link_tag *webpack_asset_paths('application', extension: 'css')
   body
     = vueport yield
+    = javascript_include_tag *webpack_asset_paths("application", extension: 'js')
