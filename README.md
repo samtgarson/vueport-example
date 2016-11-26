@@ -1,24 +1,29 @@
-# README
+#Vueport Example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a bare bones application which uses the [Vueport gem](https://github.com/samtgarson/vueport/) to work with Vue JS components in a Rails application.
 
-Things you may want to cover:
+##Setup
 
-* Ruby version
+```shell
+git clone https://github.com/samtgarson/vueport-example.git
 
-* System dependencies
+cd vueport-example
 
-* Configuration
+bundle install
+yarn install # or npm install if you have to
 
-* Database creation
+foreman start
+```
 
-* Database initialization
+Then open `locahost:5000` and you should see our basic greeting.
 
-* How to run the test suite
+##Steps up to now
 
-* Services (job queues, cache servers, search engines, etc.)
+1. Created a new Rails app including a single route, controller and view for our home page
+2. Clear out the unecessary Railsy assets stuff as we're using shiny Webpack
+3. Ran `rails g vueport:install`
+4. Created our Vue component, `greeting` and added it to the home page
+5. Done 👌
 
-* Deployment instructions
-
-* ...
+_Note:_
+You might notice I use [yarn](https://yarnpkg.com/) to install our JS dependencies, rather than NPM. In my experience yarn is not only faster, but importantly also provides us with a lockfile which has already proved it's worth.
