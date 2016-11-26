@@ -1,14 +1,17 @@
 <script>
   export default {
+    props: {
+      name: String
+    },
     data () {
       return {
-        greeting: 'hello!'
+        greeting: 'Hello'
       }
     }
   }
 </script>
 <template>
-  <h1>{{greeting}}</h1>
+  <h1>{{greeting}}, {{name}}!</h1>
 </template>
 <style scoped>
   h1 {
