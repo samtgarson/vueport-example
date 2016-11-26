@@ -44,6 +44,8 @@ GEM
     coderay (1.1.1)
     concurrent-ruby (1.0.2)
     erubis (2.7.0)
+    foreman (0.82.0)
+      thor (~> 0.19.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
@@ -131,12 +133,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  foreman
   pry-byebug
   pry-rails
   puma (~> 3.0)
   rails (~> 5.0.0, >= 5.0.0.1)
   slim-rails
   vueport
+  webpack-rails
 
 BUNDLED WITH
    1.12.5
