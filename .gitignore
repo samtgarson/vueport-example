@@ -13,3 +13,11 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+# Added by vueport
+/node_modules
+/public/webpack
+/npm-debug.log
+
+/renderer/node_modules
+/renderer/npm-debug.log
+/renderer/bundle.server.js
