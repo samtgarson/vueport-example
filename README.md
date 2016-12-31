@@ -2,7 +2,7 @@
 
 This is a bare bones application which uses the [Vueport gem](https://github.com/samtgarson/vueport/) to work with Vue JS components in a Rails application.
 
-##Setup
+## Setup
 
 ```shell
 git clone https://github.com/samtgarson/vueport-example.git
@@ -16,6 +16,24 @@ foreman start
 ```
 
 Then open `locahost:5000` and you should see our basic greeting.
+
+## Docker
+
+We require three Docker containers to run this application in development and production:
+- Rails _(/Dockerfile)_
+- Node _(/renderer/Dockerfile)_ - runs the node server used for SSR
+- Webpack _(/Dockerfile.webpack)_ - runs the webpack development server which compiles during devlopment and handles things like Hot Module Reloading
+
+We also have a `docker-compose.yml` for composing the containers needed in development.
+
+### Setup
+
+```shell
+git clone https://github.com/samtgarson/vueport-example.git
+
+docker-compose build
+docker-compose up
+```
 
 ##Steps up to now
 

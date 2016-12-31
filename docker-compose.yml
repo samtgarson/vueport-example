@@ -1,0 +1,30 @@
+version: '2'
+services:
+  web:
+    environment:
+      - RAILS_ENV=development
+      - WEBPACK_DEV_SERVER_HOST=webpack
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/opt
+    links:
+      - webpack
+    ## Enable these when debugging
+    ## Then do `docker attach {PROCESS ID}`
+    ## to pick up your binding.pry
+    # tty: true
+    # stdin_open: true
+
+  webpack:
+    build: 
+      context: .
+      dockerfile: Dockerfile.webpack
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
+    volumes:
+      - .:/opt
+    ports:
+      - "3808:3808"
