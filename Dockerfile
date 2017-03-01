@@ -2,7 +2,7 @@ FROM ruby:2.3.1-slim
 
 RUN apt-get update -qq && apt-get install -qq -y --no-install-recommends \
         curl build-essential git-core libfontconfig --fix-missing \
-        && rm -rf /var/lib/apt/lists/* 
+        && rm -rf /var/lib/apt/lists/*
 
 ENV INSTALL_PATH /opt
 RUN mkdir -p $INSTALL_PATH
@@ -18,4 +18,4 @@ COPY . ./
 RUN rm -rf renderer
 
 EXPOSE 3000
-CMD bundle exec rails server
+CMD bundle exec puma -C config/puma.rb
