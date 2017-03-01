@@ -5,6 +5,7 @@ services:
       - RAILS_ENV=development
       - WEBPACK_DEV_SERVER_HOST=webpack
     build: .
+    command: sh -c "rm -f /opt/tmp/pids/server.pid && bundle exec puma -C config/puma.rb"
     ports:
       - "3000:3000"
     volumes:
@@ -18,7 +19,7 @@ services:
     # stdin_open: true
 
   webpack:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile.webpack
     environment:
